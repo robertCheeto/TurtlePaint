@@ -16,7 +16,7 @@ public class Hexagon extends Shape {
     public void paint() {
         turtle.penUp();
         turtle.goTo(locationX, locationY);
-        turtle.setPenWidth(getTurtle().getPenWidth());
+        turtle.setPenWidth(boarder);
         turtle.setColor(Color.BLUE);
 
         turtle.penDown();

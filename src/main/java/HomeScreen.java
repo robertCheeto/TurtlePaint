@@ -27,7 +27,7 @@ public class HomeScreen {
 
     public void addShapeMenu() {
         System.out.println("\n\nWhat shape do you want to draw?");
-        System.out.println("1) Square\n2) Circle\n3) Triangle\n4) Hexagon");
+        System.out.println("1) Square\n2) Circle\n3) Triangle\n4) Hexagon\n5) Fibonacci");
         System.out.print("Please enter your choice here: ");
 
         userInput = keyboard.nextInt();
@@ -38,9 +38,10 @@ public class HomeScreen {
     public void shapeMenuChoice(int userInput) {
         switch (userInput) {
             case 1 -> createSquare();
-            //case 2 -> createCircle();
+            case 2 -> createCircle();
             case 3 -> createTriangle();
             case 4 -> createHexagon();
+            case 5 -> createFibonacci();
             default -> System.out.println("Please enter a valid input.");
         }
     }
@@ -80,6 +81,43 @@ public class HomeScreen {
         Square paintSquare = new Square(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, length);
 
         paintSquare.paint();
+    }
+
+    public void createCircle() {
+        System.out.print("Enter location of the circle (X): ");
+        int locationX = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter location of the circle (Y): ");
+        int locationY = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter circle radius: ");
+        double radius = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        System.out.print("Enter pen size width: ");
+        int penWidth = keyboard.nextInt();
+        keyboard.nextLine();
+
+        // cannot figure out how to code this properly so the
+        //pen color is permanently set to green for the time being
+        System.out.print("Enter pen color: ");
+        String color = keyboard.nextLine().toUpperCase().trim();
+        //Color color = Color.getColor(colorInput);
+
+        System.out.print("Enter size of the canvas (X): ");
+        double canvasX = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        System.out.print("Enter size of the canvas (Y): ");
+        double canvasY = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        World w = new World();
+        Circle paintCircle = new Circle(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, radius);
+
+        paintCircle.paint();
     }
 
     public void createTriangle() {
@@ -154,6 +192,43 @@ public class HomeScreen {
         Hexagon paintHexagon = new Hexagon(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, length);
 
         paintHexagon.paint();
+    }
+
+    public void createFibonacci() {
+        System.out.print("Enter location of the fib (X): ");
+        int locationX = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter location of the fib (Y): ");
+        int locationY = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter fib radius: ");
+        double radius = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        System.out.print("Enter pen size width: ");
+        int penWidth = keyboard.nextInt();
+        keyboard.nextLine();
+
+        // cannot figure out how to code this properly so the
+        //pen color is permanently set to green for the time being
+        System.out.print("Enter pen color: ");
+        String color = keyboard.nextLine().toUpperCase().trim();
+        //Color color = Color.getColor(colorInput);
+
+        System.out.print("Enter size of the canvas (X): ");
+        double canvasX = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        System.out.print("Enter size of the canvas (Y): ");
+        double canvasY = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        World w = new World();
+        Fibonacci paintFibonacci = new Fibonacci(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, radius);
+
+        paintFibonacci.paint();
     }
 
 }

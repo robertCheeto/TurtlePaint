@@ -1,9 +1,9 @@
 import java.awt.*;
 
-public class Circle extends Shape {
+public class Fibonacci extends Shape {
     private double radius;
 
-    public Circle(Turtle turtle, double locationX, double locationY, String color, int boarder, double radius) {
+    public Fibonacci(Turtle turtle, double locationX, double locationY, String color, int boarder, double radius) {
         super(turtle, locationX, locationY, color, boarder);
         this.radius = radius;
     }
@@ -21,9 +21,9 @@ public class Circle extends Shape {
 
         turtle.penDown();
 
-        for (int i = 0; i < 9; i++) {
-            turtle.forward(radius);
-            turtle.turnRight(radius * 1.89);
+        for (int i = 0; i < 360; i++) {
+            turtle.forward(radius / 5);
+            turtle.turnRight(i);
         }
     }
 }
