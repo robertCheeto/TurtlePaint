@@ -34,7 +34,9 @@ public class HomeScreen {
 
     public void shapeMenuChoice(int userInput) {
         switch (userInput) {
-            case 1 -> createSquare();
+            case 1 -> {
+                createSquare();
+            }
             //case 2 -> createCircle();
             //case 3 -> createTriangle();
             //case 4 -> createHexagon;
@@ -42,13 +44,17 @@ public class HomeScreen {
         }
     }
 
-    public Square createSquare() {
-        System.out.print("Enter square width: ");
-        int width = keyboard.nextInt();
+    public void createSquare() {
+        System.out.print("Enter location of the square (X): ");
+        int locationX = keyboard.nextInt();
         keyboard.nextLine();
 
-        System.out.print("Enter square height: ");
-        int height = keyboard.nextInt();
+        System.out.print("Enter location of the square (Y): ");
+        int locationY = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter square length: ");
+        int length = keyboard.nextInt();
         keyboard.nextLine();
 
         // size of pen
@@ -60,14 +66,6 @@ public class HomeScreen {
         String colorInput = keyboard.nextLine().toUpperCase().trim();
         Color color = Color.getColor(colorInput);
 
-        System.out.print("Enter location of the square (X): ");
-        int locationX = keyboard.nextInt();
-        keyboard.nextLine();
-
-        System.out.print("Enter location of the square (Y): ");
-        int locationY = keyboard.nextInt();
-        keyboard.nextLine();
-
         System.out.print("Enter size of the canvas (X): ");
         double canvasX = keyboard.nextDouble();
         keyboard.nextLine();
@@ -77,8 +75,9 @@ public class HomeScreen {
         keyboard.nextLine();
 
         World w = new World();
+        Square paintSquare = new Square(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, length);
 
-        return new Square(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, width, height);
+        paintSquare.paint();
     }
 
 }
