@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class HomeScreen {
     public static Scanner keyboard = new Scanner(System.in);
-    int userInput = keyboard.nextInt();
+    public static int userInput;
 
     public void mainMenu() {
         System.out.println("Welcome to TurtlePaint");
@@ -12,8 +12,9 @@ public class HomeScreen {
         System.out.println("0) Exit Program");
         System.out.print("Enter you choice here: ");
 
-        mainMenuChoice(userInput);
+        userInput = keyboard.nextInt();
         keyboard.nextLine();
+        mainMenuChoice(userInput);
     }
 
     public void mainMenuChoice(int userInput) {
@@ -26,17 +27,16 @@ public class HomeScreen {
 
     public void addShapeMenu() {
         System.out.println("\n\nWhat shape do you want to draw?");
-        System.out.println("1) Square\n2) Circle\n3) Triangle\n4)Hexagon");
+        System.out.println("1) Square\n2) Circle\n3) Triangle\n4) Hexagon");
 
-        shapeMenuChoice(userInput);
+        keyboard.nextInt();
         keyboard.nextLine();
+        shapeMenuChoice(userInput);
     }
 
     public void shapeMenuChoice(int userInput) {
         switch (userInput) {
-            case 1 -> {
-                createSquare();
-            }
+            case 1 -> createSquare();
             //case 2 -> createCircle();
             //case 3 -> createTriangle();
             //case 4 -> createHexagon;

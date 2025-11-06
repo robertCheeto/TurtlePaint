@@ -14,6 +14,24 @@ public class Square extends Shape {
 
     @Override
     public void paint() {
+        turtle.penUp();
+        turtle.goTo(locationX, locationY);
+        turtle.setPenWidth(getTurtle().getPenWidth());
+        turtle.setColor(color);
+
+        turtle.penDown();
+
+        turtle.forward(length);
+        turtle.turnRight(90);
+
+        turtle.forward(length);
+        turtle.turnRight(90);
+
+        turtle.forward(length);
+        turtle.turnRight(90);
+
+        turtle.forward(length);
+        turtle.turnRight(90);
 
     }
 }
