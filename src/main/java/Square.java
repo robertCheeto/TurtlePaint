@@ -21,6 +21,7 @@ public class Square extends Shape {
     public void paint() {
         World w = new World(this.width, this.height, this.getColor());
         Square square = new Square(new Turtle(w), getLocationX(), getLocationY(), getColor(), getBoarder(), getWidth(), getHeight());
+        
 
     }
 }
