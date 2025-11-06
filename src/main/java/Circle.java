@@ -23,7 +23,7 @@ public class Circle extends Shape {
 
         for (int i = 0; i < 9; i++) {
             turtle.forward(radius);
-            turtle.turnRight(radius * 1.89);
+            turtle.turnRight(radius * 1.8);
         }
     }
 }
