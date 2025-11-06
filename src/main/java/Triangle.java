@@ -21,14 +21,14 @@ public class Triangle extends Shape {
 
         turtle.penDown();
 
+        turtle.turnRight(180);
         turtle.forward(getLength());
-        turtle.turnRight(45);
 
+        turtle.turnRight(120);
         turtle.forward(getLength());
-        turtle.turnRight(45);
 
+        turtle.turnRight(120);
         turtle.forward(getLength());
-        turtle.turnRight(45);
 
     }
 }

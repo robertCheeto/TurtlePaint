@@ -43,7 +43,6 @@ public class HomeScreen {
             case 4 -> createHexagon();
             default -> System.out.println("Please enter a valid input.");
         }
-        System.out.println(userInput);
     }
 
     public void createSquare() {
