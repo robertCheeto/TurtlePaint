@@ -3,10 +3,10 @@ import java.awt.*;
 public abstract class Shape {
     protected Turtle turtle;
     protected double locationX, locationY;
-    protected Color color;
+    protected String color;
     protected int boarder;
 
-    public Shape(Turtle turtle, double locationX, double locationY, Color color, int boarder) {
+    public Shape(Turtle turtle, double locationX, double locationY, String color, int boarder) {
         this.turtle = turtle;
         this.locationX = locationX;
         this.locationY = locationY;
@@ -38,11 +38,11 @@ public abstract class Shape {
         this.locationY = locationY;
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 

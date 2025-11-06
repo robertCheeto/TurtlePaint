@@ -1,24 +1,34 @@
 import java.awt.*;
 
 public class Triangle extends Shape {
-    private double width, height;
+    private int length;
 
-    public Triangle(Turtle turtle, double locationX, double locationY, Color color, int boarder, double width, double height) {
+    public Triangle(Turtle turtle, double locationX, double locationY, String color, int boarder, int length) {
         super(turtle, locationX, locationY, color, boarder);
-        this.width = width;
-        this.height = height;
+        this.length = length;
     }
 
-    public double getWidth() {
-        return width;
-    }
-
-    public double getHeight() {
-        return height;
+    public int getLength() {
+        return length;
     }
 
     @Override
     public void paint() {
+        turtle.penUp();
+        turtle.goTo(locationX, locationY);
+        turtle.setPenWidth(getTurtle().getPenWidth());
+        turtle.setColor(Color.RED);
+
+        turtle.penDown();
+
+        turtle.forward(getLength());
+        turtle.turnRight(45);
+
+        turtle.forward(getLength());
+        turtle.turnRight(45);
+
+        turtle.forward(getLength());
+        turtle.turnRight(45);
 
     }
 }

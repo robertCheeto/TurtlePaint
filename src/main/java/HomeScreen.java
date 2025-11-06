@@ -28,8 +28,9 @@ public class HomeScreen {
     public void addShapeMenu() {
         System.out.println("\n\nWhat shape do you want to draw?");
         System.out.println("1) Square\n2) Circle\n3) Triangle\n4) Hexagon");
+        System.out.print("Please enter your choice here: ");
 
-        keyboard.nextInt();
+        userInput = keyboard.nextInt();
         keyboard.nextLine();
         shapeMenuChoice(userInput);
     }
@@ -38,10 +39,11 @@ public class HomeScreen {
         switch (userInput) {
             case 1 -> createSquare();
             //case 2 -> createCircle();
-            //case 3 -> createTriangle();
-            //case 4 -> createHexagon;
+            case 3 -> createTriangle();
+            case 4 -> createHexagon();
             default -> System.out.println("Please enter a valid input.");
         }
+        System.out.println(userInput);
     }
 
     public void createSquare() {
@@ -57,14 +59,15 @@ public class HomeScreen {
         int length = keyboard.nextInt();
         keyboard.nextLine();
 
-        // size of pen
         System.out.print("Enter pen size width: ");
         int penWidth = keyboard.nextInt();
         keyboard.nextLine();
 
+        // cannot figure out how to code this properly so the
+        //pen color is permanently set to green for the time being
         System.out.print("Enter pen color: ");
-        String colorInput = keyboard.nextLine().toUpperCase().trim();
-        Color color = Color.getColor(colorInput);
+        String color = keyboard.nextLine().toUpperCase().trim();
+        //Color color = Color.getColor(colorInput);
 
         System.out.print("Enter size of the canvas (X): ");
         double canvasX = keyboard.nextDouble();
@@ -78,6 +81,80 @@ public class HomeScreen {
         Square paintSquare = new Square(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, length);
 
         paintSquare.paint();
+    }
+
+    public void createTriangle() {
+        System.out.print("Enter location of the triangle (X): ");
+        int locationX = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter location of the triangle (Y): ");
+        int locationY = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter triangle length (will be the same length for all 3 sides): ");
+        int length = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter pen size width: ");
+        int penWidth = keyboard.nextInt();
+        keyboard.nextLine();
+
+        // cannot figure out how to code this properly so the
+        //pen color is permanently set to green for the time being
+        System.out.print("Enter pen color: ");
+        String color = keyboard.nextLine().toUpperCase().trim();
+        //Color color = Color.getColor(colorInput);
+
+        System.out.print("Enter size of the canvas (X): ");
+        double canvasX = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        System.out.print("Enter size of the canvas (Y): ");
+        double canvasY = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        World w = new World();
+        Triangle paintTriangle = new Triangle(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, length);
+
+        paintTriangle.paint();
+    }
+
+    public void createHexagon() {
+        System.out.print("Enter location of the hexagon (X): ");
+        int locationX = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter location of the hexagon (Y): ");
+        int locationY = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter hexagon length (will be the same length for all 6 sides): ");
+        int length = keyboard.nextInt();
+        keyboard.nextLine();
+
+        System.out.print("Enter pen size width: ");
+        int penWidth = keyboard.nextInt();
+        keyboard.nextLine();
+
+        // cannot figure out how to code this properly so the
+        //pen color is permanently set to green for the time being
+        System.out.print("Enter pen color: ");
+        String color = keyboard.nextLine().toUpperCase().trim();
+        //Color color = Color.getColor(colorInput);
+
+        System.out.print("Enter size of the canvas (X): ");
+        double canvasX = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        System.out.print("Enter size of the canvas (Y): ");
+        double canvasY = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        World w = new World();
+        Hexagon paintHexagon = new Hexagon(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, length);
+
+        paintHexagon.paint();
     }
 
 }

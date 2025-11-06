@@ -3,7 +3,7 @@ import java.awt.*;
 public class Square extends Shape {
     private int length;
 
-    public Square(Turtle turtle, double locationX, double locationY, Color color, int boarder, int length) {
+    public Square(Turtle turtle, double locationX, double locationY, String color, int boarder, int length) {
         super(turtle, locationX, locationY, color, boarder);
         this.length = length;
     }
@@ -17,7 +17,7 @@ public class Square extends Shape {
         turtle.penUp();
         turtle.goTo(locationX, locationY);
         turtle.setPenWidth(getTurtle().getPenWidth());
-        turtle.setColor(color);
+        turtle.setColor(Color.GREEN);
 
         turtle.penDown();
 
