@@ -4,7 +4,6 @@ public class MainApp
 {
     public static void main(String[] args)
     {
-        // test comment
         // This starter code to get you familiar with how
         // the TurtleLogo application works
 
