@@ -12,8 +12,8 @@ public class MainApp
         // the TurtleLogo application works
 
         // The world is your canvas
-        World world = new World(200, 200);
-        Turtle turtle = new Turtle(world,-100, -100);
+        World world = new World(500, 500);
+        Turtle turtle = new Turtle(world,0, 0);
 
         int width = 200;
         int height = 200;
@@ -28,7 +28,7 @@ public class MainApp
         turtle.setPenWidth(3);
         turtle.setColor(Color.GREEN);
 
-        turtle.turnRight(45);
+        turtle.turnRight(270);
         turtle.forward(hypotenuse);
 
         turtle.penUp();

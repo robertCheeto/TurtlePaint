@@ -19,6 +19,6 @@ public class Square extends Shape {
 
     @Override
     public void paint() {
-
+        World w = new World(this.width, this.height, )
     }
 }
