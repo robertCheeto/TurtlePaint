@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.Scanner;
 
 public class HomeScreen {
@@ -56,7 +57,8 @@ public class HomeScreen {
         keyboard.nextLine();
 
         System.out.print("Enter pen color: ");
-        String color = keyboard.nextLine();
+        String colorInput = keyboard.nextLine().toUpperCase().trim();
+        Color color = Color.getColor(colorInput);
 
         System.out.print("Enter location of the square (X): ");
         int locationX = keyboard.nextInt();
@@ -66,7 +68,17 @@ public class HomeScreen {
         int locationY = keyboard.nextInt();
         keyboard.nextLine();
 
-        return new Square(turtle, locationX, locationY, color, penWidth, width, height);
+        System.out.print("Enter size of the canvas (X): ");
+        double canvasX = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        System.out.print("Enter size of the canvas (Y): ");
+        double canvasY = keyboard.nextDouble();
+        keyboard.nextLine();
+
+        World w = new World();
+
+        return new Square(new Turtle(canvasX, canvasY, w), locationX, locationY, color, penWidth, width, height);
     }
 
 }

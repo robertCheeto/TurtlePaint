@@ -4,6 +4,9 @@ public class MainApp
 {
     public static void main(String[] args)
     {
+//        HomeScreen homeScreen = new HomeScreen();
+//
+//        homeScreen.mainMenu();
 
         // This starter code to get you familiar with how
         // the TurtleLogo application works
@@ -11,7 +14,7 @@ public class MainApp
         // The world is your canvas
         World world = new World(200, 200);
         Turtle turtle = new Turtle(world,-100, -100);
-        
+
         int width = 200;
         int height = 200;
 
